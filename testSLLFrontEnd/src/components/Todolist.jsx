@@ -25,7 +25,7 @@ const Todolist = () => {
 
             try {
                 // Axios POST request to submit the task data
-                const response = await axios.post('https://13.202.210.238:8081/createTask', newTask);
+                const response = await axios.post('http://13.202.210.238:8081/createTask', newTask);
                 console.log('Task submitted successfully:', response.data);
 
                 // Add the new task to the local todolist state
@@ -40,7 +40,7 @@ const Todolist = () => {
 
      const getAllTask = async () => {
      try {
-          const response = await axios.post('https://13.202.210.238:8081/todos');
+          const response = await axios.post('http://13.202.210.238:8081/todos');
           console.log('Task fetched successfully:', response.data);
           setFetchedTasks(response.data?.data)
           setSuccess(true)
