@@ -10,7 +10,7 @@ connectDB();
 
 const app = express();
 app.use(cors({
-    origin: ['http://127.0.0.1:3001', 'http://localhost:3001'],  // Allowed frontend origins
+    origin: ['https://testssl.shubham09anand.in','https://apitestssl.shubham09anand.in', 'https://13.202.210.238:3001', '*'],  // Allowed frontend origins
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],  // Allowed methods
     optionsSuccessStatus: 200  // Status for successful OPTIONS request
 }));
@@ -26,6 +26,10 @@ app.use(express.urlencoded({ extended: true }));
 // Include existing routes
 app.post("/createTask", createToDo);
 app.post("/todos", getAllToDos);
+
+app.get('/test', (req, res) => {
+    res.json({ message: 'CORS enabled!' });
+});
 
 // Start the server on the defined port
 server.listen(port, () => {
