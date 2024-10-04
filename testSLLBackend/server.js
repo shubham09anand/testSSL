@@ -10,13 +10,13 @@ connectDB();
 
 const app = express();
 app.use(cors({
-    origin: ['http://127.0.0.1:3000', 'http://localhost:3000'],  // Allowed frontend origins
+    origin: ['http://127.0.0.1:3001', 'http://localhost:3001'],  // Allowed frontend origins
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],  // Allowed methods
     optionsSuccessStatus: 200  // Status for successful OPTIONS request
 }));
 
 const server = http.createServer(app);
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8081;
 
 app.use(bodyParser.json({ limit: '100mb' }));
 app.use(express.json());
